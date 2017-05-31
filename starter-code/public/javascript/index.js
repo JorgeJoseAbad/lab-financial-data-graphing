@@ -15,7 +15,7 @@ function getFinInfo(id) {
       console.log(x);
       console.log(y);
       ploter(x,y);
-  
+
       console.log("respuesta recogida");
       return data;
     },
@@ -26,7 +26,7 @@ function getFinInfo(id) {
 }
 
 $("#finButton").on('click', function(){
-  const data = getFinInfo(1);
+  const data = getFinInfo(5);
   console.log(data);
 
 });

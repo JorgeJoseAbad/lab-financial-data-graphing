@@ -25,7 +25,7 @@
     function ploter(x,y){
       var ctx = document.getElementById("myLineChart");
           var myLineChart = new Chart(ctx, {
-          type: 'line',
+          type: 'bar',
           data: {
             labels: x,
             datasets: [{
@@ -34,8 +34,8 @@
 
               }],
             }
-        });
-  }
+          });
+        }
 
     </script>
 
