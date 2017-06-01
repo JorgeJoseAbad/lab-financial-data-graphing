@@ -1,5 +1,5 @@
 
-function ploter(x,y){
+function ploter(x,y,currency){
     var ctx = document.getElementById("myLineChart");
       var myLineChart = new Chart(ctx, {
       type: 'bar',
@@ -28,6 +28,18 @@ function ploter(x,y){
               spanGaps: false,
 
           }],
+        },
+        options:{
+        scales: {
+            yAxes: [{
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return currency +' '+ value;
+                      }
+                  }
+              }]
+            }
         }
       });
     }
@@ -40,9 +52,10 @@ function writeMaxMin(x,y){
   document.getElementById("min").value= min;
 }
 
-function workData(response){
+function workData(response,currency){
   var obj = jQuery.parseJSON(response);
   console.log(obj);
+  console.log(currency);
   console.log(obj.bpi);
   var data=obj.bpi;
   var x = Object.keys(obj.bpi);
@@ -50,7 +63,7 @@ function workData(response){
   //console.log(data);
   console.log(x);
   console.log(y);
-  ploter(x,y);
+  ploter(x,y,currency);
   writeMaxMin(x,y);
   console.log("respuesta recogida");
   return data;
@@ -68,7 +81,7 @@ function getFinancialDatabyCurrency(currency) {
     url: "http://api.coindesk.com/v1/bpi/historical/close.json?currency="+currency,
     method: "GET",
     success: function (response) {
-      workData(response);
+      workData(response,currency);
 
     },
     error: function (err) {
