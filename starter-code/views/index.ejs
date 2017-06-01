@@ -11,6 +11,23 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
+      <select id="currency" name="currency">
+        <option selected="selected" value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="PYG">PYG</option>
+      </select>
+      <input type="number" name="max" id="max" value="">Max</input>
+      <input type="number" name="min" id="min" value="">Min</input>
+    <br></br>
+
+    <h1>between Dates</h1>
+      <button type="button" id="dates" name="button">Show Chart</button>
+      <input type="date" id= "start-date" value="2017-01-04">
+      <input type="date" id= "end-date" value="2017-01-15">
+
+    </form>
+
     <button id="finButton">Get financial stuff</button>
 
     <br></br>
