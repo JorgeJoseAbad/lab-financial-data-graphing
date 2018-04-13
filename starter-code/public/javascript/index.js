@@ -78,7 +78,7 @@ $("#currency").change(function(){
 
 function getFinancialDatabyCurrency(currency) {
   $.ajax({
-    url: "http://api.coindesk.com/v1/bpi/historical/close.json?currency="+currency,
+    url: "https://api.coindesk.com/v1/bpi/historical/close.json?currency="+currency,
     method: "GET",
     success: function (response) {
       workData(response,currency);
@@ -94,7 +94,7 @@ function getFinancialDatabyCurrency(currency) {
 
 function getFinInfo(id) {
   $.ajax({
-    url: "http://api.coindesk.com/v1/bpi/historical/close.json",
+    url: "https://api.coindesk.com/v1/bpi/historical/close.json",
     method: "GET",
     success: function (response) {
       workData(response);
@@ -148,7 +148,7 @@ document.getElementById('end-date').addEventListener('click',function(){
 
 function getFinancialDatabyDate(dataInit,dataEnd){
   $.ajax({
-    url: "http://api.coindesk.com/v1/bpi/historical/close.json?start="+dataInit+"&end="+dataEnd,
+    url: "https://api.coindesk.com/v1/bpi/historical/close.json?start="+dataInit+"&end="+dataEnd,
     method: "GET",
     //dataType: 'JSON',
     success: function(response){
